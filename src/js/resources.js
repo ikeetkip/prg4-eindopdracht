@@ -1,17 +1,17 @@
 import { ImageSource, Sound, Resource, Loader } from "excalibur";
-import bgImage from "./bg.png";
-import MarioImage from "./mario.png";
-import BowserImage from "./bowser.png";
+import bgImage from "../images/bg.png";
+import PlayerImage from "../images/player_idle.png";
+import EnemyImage from "../images/zombie_hurt.png";
 
 const Resources = {
   bg: new ImageSource(bgImage),
-  Mario: new ImageSource(MarioImage),
-  Bowser: new ImageSource(BowserImage),
+  Player: new ImageSource(PlayerImage),
+  Enemy: new ImageSource(EnemyImage),
 };
 const ResourceLoader = new Loader([
   Resources.bg,
-  Resources.Mario,
-  Resources.Bowser,
+  Resources.Player,
+  Resources.Enemy,
 ]);
 
 export { Resources, ResourceLoader };

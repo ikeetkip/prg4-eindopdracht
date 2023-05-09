@@ -23,33 +23,32 @@ export class Game extends Engine {
     //Add Bg
     this.add(Bg);
 
-    //Mario
-    const Mario = new Actor({
-      width: Resources.Mario.width,
-      height: Resources.Mario.height,
+
+    //Player
+    const Player = new Actor({
+
     });
-    Mario.graphics.use(Resources.Mario.toSprite());
-    Mario.pos = new Vector(150, 150);
-
-    let sc = Math.Random() + 0.4;
-    Mario.scale = new Vector(sc, sc);
-
-    //Add Mario
-    this.add(Mario);
+    Player.graphics.use(Resources.Player.toSprite());
+    Player.pos = new Vector(50, 380);
+   
+    //Add Player
+    this.add(Player);
 
   
-    //Bowser
-    const Bowser = new Actor({
-      width: Resources.Bowser.width,
-      height: Resources.Bowser.height,
+    //Enemy
+    const Enemy = new Actor({
+      width: Resources.Enemy.width,
+      height: Resources.Enemy.height,
     });
-    Bowser.graphics.use(Resources.Bowser.toSprite());
-    Bowser.pos = new Vector(300, 300);
+    Enemy.graphics.use(Resources.Enemy.toSprite());
+    Enemy.pos = new Vector(300, 380);
 
-    let sc2 = Math.Random() + 0.4;
-    Mario.scale = new Vector(sc2, sc2);
-    // Add Bowser
-    this.add(Bowser);
+
+  
+    // Add Enemy
+    this.add(Enemy);
+
+    
   }
 }
 
