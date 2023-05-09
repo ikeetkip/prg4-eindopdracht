@@ -19,32 +19,22 @@ export class Game extends Engine {
       this.canvasHeight / (Bg.height * 1.4)
     );
     Bg.pos = new Vector(150, 150);
-
     //Add Bg
     this.add(Bg);
 
 
     //Player
-    const Player = new Actor({
-
-    });
+    const Player = new Actor()
     Player.graphics.use(Resources.Player.toSprite());
     Player.pos = new Vector(50, 380);
-   
     //Add Player
     this.add(Player);
 
   
     //Enemy
-    const Enemy = new Actor({
-      width: Resources.Enemy.width,
-      height: Resources.Enemy.height,
-    });
+    const Enemy = new Actor()
     Enemy.graphics.use(Resources.Enemy.toSprite());
     Enemy.pos = new Vector(300, 380);
-
-
-  
     // Add Enemy
     this.add(Enemy);
 
