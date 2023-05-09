@@ -1,5 +1,6 @@
 import '../css/style.css'
 import fishImage from '../images/fish.png'
+import { Game } from './game'
 
 const div = document.createElement("div")
 div.classList.add("fish")
