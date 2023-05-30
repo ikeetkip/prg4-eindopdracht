@@ -1,50 +1,25 @@
-import { Actor, Engine, Vector, Label, Color, Font } from "excalibur";
-import { Resources, ResourceLoader } from "./resources.js";
+import { Engine } from 'excalibur'
+import { Level } from './scene'
+import { GameOver } from './gameover'
+import { ResourceLoader } from './resources'
 
 
 export class Game extends Engine {
-  constructor() {
-    super({ width: 640, height: 480 });
-    this.start(ResourceLoader).then(() => this.startGame());
-  }
+    level;
+    gameover;
 
-  startGame() {
-    //Bg
-    const Bg = new Actor({
-      width: Resources.bg.width,
-      height: Resources.bg.height,
-    });
-    Bg.graphics.use(Resources.bg.toSprite());
+    constructor() {
+        super({ width: 1300, height: 600 });
+        this.start(ResourceLoader).then(() => this.startGame());
+    }
 
-    //TODO make it that the background keeps looping 
-    Bg.scale = new Vector(
-    
-      this.canvasWidth / (Bg.width * 1),
-      this.canvasHeight / (Bg.height * 1.4)
-    );
-    Bg.pos = new Vector(150, 150);
+    startGame() {
+        this.addScene('level', new Level());
+        this.addScene('gameover', new GameOver());
 
-    for (let i = 0; i < this.canvasWidth.length; i++) {
-      for (let j = 0; j < this.canvasHeight.length; j++) {
-        
-      }
-      
-    }  
-  
-    //Add Bg
-    this.add(Bg);
-
-    
-
-    //Player
-    const Player = new Actor()
-    Player.graphics.use(Resources.Player.toSprite());
-    Player.pos = new Vector(50, 380);
-    //Add Player
-    this.add(Player);
-
-  
-  }
+        this.goToScene('level');
+    }
 }
 
-new Game();
+
+new Game()

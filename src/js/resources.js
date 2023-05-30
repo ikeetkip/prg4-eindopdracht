@@ -1,17 +1,22 @@
-import { ImageSource, Sound, Resource, Loader } from "excalibur";
-import bgImage from "../images/bg.png";
-import PlayerImage from "../images/player_idle.png";
-import EnemyImage from "../images/zombie_hurt.png";
+import { ImageSource, Sound, Resource, Loader } from 'excalibur'
+import terrainImage from '../images/bg.png'
+import player_idle from '../images/mario.png'
+import playerProjectile from '../images/fireball.png'
+import enemyProjectile from '../images/bowser.png'
+import healthbars from '../images/HealthBarSpriteSheet.png'
+import retrybutton from '../images/retrybutton.png'
 
 const Resources = {
-  bg: new ImageSource(bgImage),
-  Player: new ImageSource(PlayerImage),
-  Enemy: new ImageSource(EnemyImage),
-};
-const ResourceLoader = new Loader([
-  Resources.bg,
-  Resources.Player,
-  Resources.Enemy,
-]);
-
-export { Resources, ResourceLoader };
+    Terrain: new ImageSource(terrainImage),
+    Player: new ImageSource(player_idle),
+    PlayerProjectile: new ImageSource(playerProjectile),
+    EnemyProjectile: new ImageSource(enemyProjectile),
+    HealthBars: new ImageSource(healthbars),
+    RetryButton : new ImageSource(retrybutton)
+}
+const resourceArray = []
+for (const key in Resources) {
+    resourceArray.push(Resources[key])
+}
+const ResourceLoader = new Loader(resourceArray)
+export { Resources, ResourceLoader }
