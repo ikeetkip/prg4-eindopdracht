@@ -1,10 +1,10 @@
 import { ImageSource, Sound, Resource, Loader } from 'excalibur'
 import terrainImage from '../images/bg.png'
 import player_idle from '../images/mario.png'
-import playerProjectile from '../images/fireball.png'
+import playerProjectile from '../images/RedProjectile.png'
 import enemyProjectile from '../images/bowser.png'
 import healthbars from '../images/HealthBarSpriteSheet.png'
-import retrybutton from '../images/retrybutton.png'
+import retrybutton from '../images/mariodead.png'
 
 const Resources = {
     Terrain: new ImageSource(terrainImage),
