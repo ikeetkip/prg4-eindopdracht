@@ -65,6 +65,16 @@ export class Level extends Scene {
     this.healthbar.onHealthUpdate(this.playerCharacter.health);
   }
 
+  onDeactivate(ctx) {
+    this.add(new Blank());
+
+    // Reset score when deactivating the scene
+    this.score = 0;
+    this.scoreLabel.text = 'Score: 0';
+    
+
+  }
+
   spawnEnemy() {
     let direction = 1;
     let startpoint = 0;
