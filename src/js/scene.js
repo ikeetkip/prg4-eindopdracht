@@ -74,6 +74,7 @@ export class Level extends Scene {
     
 
   }
+  
 
   spawnEnemy() {
     let direction = 1;
